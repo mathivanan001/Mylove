@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Priya ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 320px;
+    position: relative;
+}
+
+h1 {
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 120px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+    position: absolute;
+}
+
+#noBtn {
+    background: #28a745;
+    color: white;
+}
+
+#result {
+    display: none;
+    font-size: 22px;
+    color: #ff4d6d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1 id="welcome">Welcome Wife Priya ❤️</h1>
+
+    <div id="question" style="display:none;">
+        <p>Do u want mathi accept your decision💍</p>
+
+        <div class="buttons">
+            <button id="yesBtn">Yes 💖</button>
+            <button id="noBtn">No 😢</button>
+        </div>
+    </div>
+
+    <div id="result">
+        Thanks for understanding my opinion darling ❤️😘
+    </div>
+</div>
+
+<script>
+setTimeout(() => {
+    document.getElementById("question").style.display = "block";
+}, 2000);
+
+const yesBtn = document.getElementById("yesBtn");
+
+yesBtn.addEventListener("mouseover", moveButton);
+yesBtn.addEventListener("touchstart", moveButton); // mobile support
+
+function moveButton() {
+    const card = document.querySelector(".card");
+    const maxX = card.clientWidth - 100;
+    const maxY = 100;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    yesBtn.style.left = x + "px";
+    yesBtn.style.top = y + "px";
+}
+
+document.getElementById("noBtn").addEventListener("click", () => {
+    document.getElementById("question").style.display = "none";
+    document.getElementById("result").style.display = "block";
+});
+</script>
+
+</body>
+</html>
